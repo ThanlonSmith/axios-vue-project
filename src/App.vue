@@ -5,13 +5,11 @@
         v-for="(item,index) in navList"
         :key="item.id"
         @click="categoryhandler(index)"
-        :class="{active:currentIndex===index}"
+        :class="{active:currentIndex===index} "
       >
         <router-link :to="{name:item.name}">{{item.title}}</router-link>
       </span>
-      <router-view>
-        
-      </router-view>
+      <router-view></router-view>
     </div>
   </div>
 </template>
