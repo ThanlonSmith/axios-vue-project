@@ -12,7 +12,7 @@
       </ul>
     </div>
     <!-- <div style="clear: both;"></div> -->
-    <div class="courseList" >
+    <div class="courseList">
       <ul>
         <li v-for="course in courseList" :key="course.id">{{course.name}}</li>
       </ul>
@@ -28,8 +28,8 @@ export default {
       categoryList: [], //分类列表
       currentIndex: 0, //课程列表
       courseList: [],
-      categoryId: 1,
-      id:2,
+      categoryId: 0,
+      id: 2,
     };
   },
   methods: {
@@ -47,6 +47,11 @@ export default {
           if (data.error_no === 0) {
             this.categoryList = data.data;
             // console.log(this.categoryList);
+            let obj = {
+              id: 0,
+              name: "全部",
+            };
+            this.categoryList.unshift(obj);
           }
         })
         .catch((err) => {
@@ -70,8 +75,8 @@ export default {
     },
   },
   created() {
-    this.getCateGoryList()
-    this.getCourseList()
+    this.getCateGoryList();
+    this.getCourseList();
   },
 };
 </script>
@@ -90,4 +95,4 @@ li {
   background-color: rebeccapurple;
   color: white;
 }
-</style>>
+</style>
