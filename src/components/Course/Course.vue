@@ -29,7 +29,6 @@ export default {
       currentIndex: 0, //课程列表
       courseList: [],
       categoryId: 0,
-      id: 2,
     };
   },
   methods: {
@@ -77,6 +76,7 @@ export default {
   created() {
     this.getCateGoryList();
     this.getCourseList();
+    this.$bus.$emit('click',1)
   },
 };
 </script>

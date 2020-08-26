@@ -30,6 +30,11 @@ export default {
       this.currentIndex = index;
     },
   },
+  created() {
+    this.$bus.$on("click", (currentIndex) => {
+      this.currentIndex = currentIndex;
+    });
+  },
 };
 </script>
 <style scoped>

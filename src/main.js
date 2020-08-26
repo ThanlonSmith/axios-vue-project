@@ -13,6 +13,9 @@ Vue.prototype.$https = Axios
 Axios.defaults.baseURL = 'http://127.0.0.1:5000/api/v1/'
 Vue.config.productionTip = false // 生产环境不需要控制台有提示
 Vue.use(ElementUI)
+// 创建bus实例，挂在到原型
+let bus = new Vue()
+Vue.prototype.$bus = bus
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -20,3 +23,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
